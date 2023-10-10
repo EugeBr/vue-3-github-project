@@ -16,8 +16,8 @@ const app = Vue.createApp({
                 const response = await fetch(API + this.search);
                 if(!response.ok) throw new Error('User not found');
                 const data = await response.json();
-                console.log(data);
-                this.result = true;
+                //console.log(data);
+                this.result = data;
             } catch (error){
                 this.error = error;
             } finally {
