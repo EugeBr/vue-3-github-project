@@ -21,6 +21,7 @@
             <h1 class="content__title">Search Github users</h1>
 
             <!-- Search -->
+            <!-- "v-on" y "@" es lo mismo -->
             <form class="search" v-on:submit.prevent="doSearch">
                 <input v-model="search" type="text" class="search__input" required placeholder="Search GitHub users">
                 <input type="submit" class="search__submit" value="Search">
@@ -30,6 +31,7 @@
             <!-- Se usa "{{}}" solo para datos de contenido y "v-bind:" para el resto -->
             <!-- Usar "v-bind:" o solo ":" es lo mismo -->
             <div class="result" v-if="result">
+                <a href="#" class="result__toggle-favorite" @click="addFavorite">Add Favorite ⭐</a>
                 <h2 class="result__name">{{result.name}}</h2>
                 <img v-bind:src="result.avatar_url" :alt="result.name" class="result__avatar">
                 <p class="result__bio">{{result.bio}}<br>
