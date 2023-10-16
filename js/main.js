@@ -73,7 +73,7 @@ const app = Vue.createApp({
         },
 
         showFavorite(favorite) {
-            this.result = favorite
+            this.result = favorite;
         },
 
         checkFavorite(id) {
